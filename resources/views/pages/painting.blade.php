@@ -3,8 +3,14 @@
 @section('content')
     <div class="flex flex-col items-center justify-center">
         <h1>{{$painting->title}}</h1>
-        <div class="w-1/4">
+        <div class="">
             <img class="max-w-full" src="{{asset('storage/'.$painting->path_lg)}}">
+        </div>
+        <div class="">
+            <img class="max-w-full" src="{{asset('storage/'.$painting->path_md)}}">
+        </div>
+        <div class="">
+            <img class="max-w-full" src="{{asset('storage/'.$painting->path_sm)}}">
         </div>
         <p>Description: {{$painting->description}}</p>
         <p>Date: {{$painting->date}}</p>

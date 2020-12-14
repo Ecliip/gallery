@@ -7,7 +7,7 @@ use Illuminate\View\Component;
 class header extends Component
 {
     /**
-     * Create a new component instance.
+     * Create a new.jpg component instance.
      *
      * @return void
      */

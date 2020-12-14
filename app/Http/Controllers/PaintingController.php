@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Painting;
 use Illuminate\Http\Request;
 //use Intervention\Image\ImageManager;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 class PaintingController extends Controller
 {
@@ -19,7 +20,7 @@ class PaintingController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new.jpg resource.
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
@@ -36,33 +37,41 @@ class PaintingController extends Controller
      */
     public function store(Request $request)
     {
-
+//        $path_lg = $request->file('image')->store('images','public');
         $original = $request->file('image');
-        $img_lg = Image::make($original);
-        $img_lg->resize(600, null);
-//        TODO: figure out how to store image in the storage
-        $img_lg->save('public/images/new.png');
-        $path_lg = $request->file('image')->store('images','public');
-        $path_lg = $original.
 
-//        $this->validate($request, [
-//            'title'=>'required|min:2',
-//            'description'=>'required|min:5|max:200',
-//            'path_lg'=>'required'
-//        ]);
+        $imagePathLg = $this->helperResize($original, $request->title, 600, 'lg');
+        $imagePathMd = $this->helperResize($original, $request->title, 300, 'md');
+        $imagePathSm = $this->helperResize($original, $request->title, 150, 'sm');
+
+        $this->validate($request, [
+            'title'=>'required|min:2',
+            'description'=>'required|min:5|max:200',
+        ]);
 
         $painting = new Painting;
         $painting->title = $request->title;
         $painting->description = $request->description;
         $painting->date = $request->date;
         $painting->materials = $request->materials;
-        $painting->path_sm = '-';
-        $painting->path_md = '-';
-        $painting->path_lg = $path_lg;
+        $painting->path_sm = $imagePathSm;
+        $painting->path_md = $imagePathMd;
+        $painting->path_lg = $imagePathLg;
         $painting->save();
-
         return redirect()->back();
     }
+
+    public function helperResize ($original, $title, $width, $sizeLetters) {
+        $imageName = $title;
+        $imageName = preg_replace("/\s/", '_', $imageName);
+        $image = Image::make($original)->resize($width, null, function ($constraint) {
+            $constraint->aspectRatio();
+        })->encode('jpg', 75);
+        $path = "images/{$sizeLetters}/{$imageName}_{$sizeLetters}.jpg";
+        Storage::put("public/{$path}", $image->getEncoded());
+        return $path;
+    }
+
 
     /**
      * Display the specified resource.

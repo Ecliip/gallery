@@ -7,7 +7,7 @@ use Illuminate\View\Component;
 class createPage extends Component
 {
     /**
-     * Create a new component instance.
+     * Create a new.jpg component instance.
      *
      * @return void
      */

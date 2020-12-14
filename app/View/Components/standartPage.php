@@ -8,7 +8,7 @@ use Illuminate\View\Component;
 class standartPage extends Component
 {
     /**
-     * Create a new component instance.
+     * Create a new.jpg component instance.
      *
      * @return void
      */
