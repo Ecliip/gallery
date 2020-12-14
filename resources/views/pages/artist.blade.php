@@ -1,0 +1,1 @@
+<x-standartPage section="art"/>
