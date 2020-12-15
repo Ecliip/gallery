@@ -1,38 +1,42 @@
 <x-header/>
 
-<main class="w-screen flex flex-col items-center h-full" >
+<main class=" min-h-screen " >
 
     {{--    TODO organize paintings when we have some --}}
     @if(!Request::is('paintings/create'))
-    <div class="w-44">
-{{--        <img class="max-w-full" src="{{asset('storage/images/img.png')}}">--}}
-        <a href="{{route('paintings.create')}}" class="whitespace-nowrap my-5 py-2 px-4 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">Add more paintings</a>
-    </div>
+        <div class="h-full flex flex-col ">
+            <div class="h-full flex flex-row justify-evenly">
+                <div class="flex flex-col h-screen w-1/5 overflow-y-auto">
+                    @foreach($paintings as $painting)
+{{--                        TODO x-scroll. find out why appears--}}
+                       <div onclick="getId({{$painting->id}})" class="flex flex-col cursor-pointer px-3 py-4 mb-5 border-solid border-grey border-b-2 hover:bg-blue-200">
+                           <h3 class="text-center mb-2">{{$painting->title}}</h3>
+                           <div class="w-24 self-center mb-4">
+                               <img class="max-w-full" src="{{asset('storage/'.$painting->path_sm)}}">
+                           </div>
+                           <p class="text-sm">Year: {{$painting->date}}</p>
+                           <p class="text-sm">"{{$painting->description}}"</p>
+                       </div>
+                    @endforeach
+                </div>
+                <iframe id="painting-view" class="h-screen w-1/2 flex flex-col items-center justify-center" src="/paintings/14"></iframe>
+
+            </div>
+            <a href="{{route('paintings.create')}}" class="w-48 whitespace-nowrap py-2 px-4 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">Add more paintings</a>
+        </div>
     @endif
     @if(Request::is('paintings/create'))
-        <form method="POST" action="{{route('paintings.store')}}" enctype="multipart/form-data">
-            @csrf
-            <div class=" w-full flex flex-col items-between mb-5">
-                <label class="mr-5" for="title">Title</label>
-                <input class="px-3 py-2 border-gray border-solid border-2" type="text" name="title" id="title" placeholder="Title">
-            </div>
-            <div class=" w-full flex flex-col items-between mb-5">
-                <label class="mr-5" for="description">Description</label>
-                <input class="px-3 py-2 border-gray border-solid border-2" type="text" name="description" id="description" placeholder="Description">
-            </div>
-            <div class=" w-full flex flex-col items-between mb-5">
-                <label class="mr-5" for="date">Date</label>
-                <input class="px-3 py-2 border-gray border-solid border-2" type="date" name="date" id="date">
-            </div>
-            <div class=" w-full flex flex-col items-between">
-                <label class="mr-5" for="materials">Date</label>
-                <input class="px-3 py-2 border-gray border-solid border-2" type="text" name="materials" id="materials" placeholder="oil, brush..." >
-            </div>
-            <input type="file" name="image" class="mb-5 py-2 px-4 bg-orange-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">
-            <button class="my-5 py-2 px-4 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">Add paintings</button>
-        </form>
+        @include('components.add-painting')
     @endif
 </main>
 
 
 <x-footer/>
+
+<script>
+    function getId(id) {
+        console.log(id);
+        const htmlPaintingView = document.getElementById('painting-view');
+        htmlPaintingView.setAttribute('src', `/paintings/${id}`);
+    }
+</script>

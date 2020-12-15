@@ -16,7 +16,8 @@ class PaintingController extends Controller
      */
     public function index()
     {
-        //
+       $paintings = Painting::all();
+       return view('pages.gallery')->with(['paintings'=>$paintings]);
     }
 
     /**

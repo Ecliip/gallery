@@ -21,7 +21,7 @@
             <li class="mr-10"><a href="{{route('home')}}">Home</a></li>
             <li class="mr-10"><a href="{{route('artist')}}">Artist</a></li>
             <li class="mr-10"><a href="{{route('school')}}">School</a></li>
-            <li><a href="{{route('gallery')}}">Gallery</a></li>
+            <li><a href="{{route('paintings.index')}}">Gallery</a></li>
         </ul>
     </nav>
     <a class="mx-5" href={{route('login')}}>Login</a>
