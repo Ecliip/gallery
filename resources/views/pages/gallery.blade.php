@@ -22,6 +22,9 @@
                     @endforeach
                 </div>
 {{--                <iframe id="painting-view" class="h-screen w-1/2 flex flex-col items-center justify-center" src="/paintings/14"></iframe>--}}
+                <div>
+
+                </div>
 
             </div>
             <a href="{{route('paintings.create')}}" class="w-48 whitespace-nowrap py-2 px-4 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">Add more paintings</a>
@@ -37,8 +40,8 @@
 
 <script>
     function getId(id) {
-        console.log(id);
-        const htmlPaintingView = document.getElementById('painting-view');
-        htmlPaintingView.setAttribute('src', `/paintings/${id}`);
+        // console.log(id);
+        // const htmlPaintingView = document.getElementById('painting-view');
+        // htmlPaintingView.setAttribute('src', `/paintings/${id}`);
     }
 </script>
