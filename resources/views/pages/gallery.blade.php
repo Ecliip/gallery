@@ -16,15 +16,13 @@
                            <div class="w-24 self-center mb-4">
                                <img class="max-w-full" src="{{asset('storage/'.$painting->path_sm)}}">
                            </div>
-                           <p class="text-sm">Year: {{$painting->date}}</p>
-                           <p class="text-sm">"{{$painting->description}}"</p>
+                           <p class="text-sm text-center">Year: {{$painting->date}}</p>
+{{--                           <p class="text-sm">"{{$painting->description}}"</p>--}}
                        </div>
                     @endforeach
                 </div>
 {{--                <iframe id="painting-view" class="h-screen w-1/2 flex flex-col items-center justify-center" src="/paintings/14"></iframe>--}}
-                <div>
-
-                </div>
+                @include('pages.painting')
 
             </div>
             <a href="{{route('paintings.create')}}" class="w-48 whitespace-nowrap py-2 px-4 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">Add more paintings</a>
@@ -47,11 +45,28 @@
         // console.log(id);
         // const htmlPaintingView = document.getElementById('painting-view');
         // htmlPaintingView.setAttribute('src', `/paintings/${id}`);
+        const title = $('#title');
+        const description = $('#description');
+        const image = $('#image');
+        const date = $('#date');
+        const materials = $('#materials');
+        const headingIntro = $('#heading-intro');
+        const buttons = $('#buttons');
+        const btnEdit = $('#btn-edit');
+        const formDestroy = $('#form-destroy');
 
         $.ajax({url: `http://127.0.0.1:8000/paintings/${id}`, success: function(result){
-               console.log(result.painting);
-
-
+               console.log(result.painting.id);
+               const painting = result.painting;
+               headingIntro.remove();
+                title.text(painting.title);
+                image.attr('src', `storage/${painting.path_lg}`);
+                description.text(`Description: ${painting.description}`);
+                date.text(`Date: ${painting.date}`);
+                materials.text(`Materials: ${painting.materials}`);
+                buttons.attr('class', 'block');
+                btnEdit.attr('href', `http://127.0.0.1:8000/paintings/${id}/edit`)
+                formDestroy.attr('action', `http://127.0.0.1:8000/paintings/${id}`)
             }});
     }
 </script>

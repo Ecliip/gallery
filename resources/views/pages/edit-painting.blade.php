@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Gallery</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <!-- Fonts -->
-
-    <!-- Styles -->
-
-</head>
+<x-header/>
 <form method="POST" action="{{route('paintings.update', $painting->id)}}" enctype="multipart/form-data">
     @csrf
     <input type="hidden" name="_method" value="PUT">
@@ -32,4 +20,4 @@
     </div>
     <button class="my-5 py-2 px-4 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">Update painting</button>
 </form>
-</html>
+<x-footer />

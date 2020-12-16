@@ -108,10 +108,10 @@ class PaintingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'title'=>'min:3|required',
-            'description'=>'min:10|required',
-        ]);
+//        $this->validate($request, [
+//            'title'=>'min:3|required',
+//            'description'=>'min:10|required',
+//        ]);
 
         $painting = Painting::findOrFail($id);
         $painting->title = $request->title;
@@ -119,7 +119,7 @@ class PaintingController extends Controller
         $painting->date = $request->date;
         $painting->materials = $request->materials;
         $painting->save();
-        return redirect('/');
+        return redirect('/paintings');
     }
 
     /**
@@ -130,7 +130,9 @@ class PaintingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $painting = Painting::findOrFail($id);
+        $painting->delete();
+        return redirect('/paintings');
     }
 
     public function storeInPublic(Request $request)
