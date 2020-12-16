@@ -11,7 +11,7 @@
                 <div class="flex flex-col h-screen w-1/5 overflow-y-auto">
                     @foreach($paintings as $painting)
 {{--                        TODO x-scroll. find out why appears--}}
-                       <div onclick="getId({{$painting->id}})" class="flex flex-col cursor-pointer px-3 py-4 mb-5 border-solid border-grey border-b-2 hover:bg-blue-200">
+                       <div onclick="getData({{$painting->id}})" class="flex flex-col cursor-pointer px-3 py-4 mb-5 border-solid border-grey border-b-2 hover:bg-blue-200">
                            <h3 class="text-center mb-2">{{$painting->title}}</h3>
                            <div class="w-24 self-center mb-4">
                                <img class="max-w-full" src="{{asset('storage/'.$painting->path_sm)}}">
@@ -38,10 +38,20 @@
 
 <x-footer/>
 
+<script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
 <script>
-    function getId(id) {
+    function getData(id) {
         // console.log(id);
         // const htmlPaintingView = document.getElementById('painting-view');
         // htmlPaintingView.setAttribute('src', `/paintings/${id}`);
+
+        $.ajax({url: `http://127.0.0.1:8000/paintings/${id}`, success: function(result){
+               console.log(result.painting);
+
+
+            }});
     }
 </script>

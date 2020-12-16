@@ -6,7 +6,7 @@
     <title>Gallery</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <script src="jquery-3.5.1.min.js"></script>
+{{--    <script src="jquery-3.5.1.min.js"></script>--}}
     <!-- Fonts -->
 
     <!-- Styles -->

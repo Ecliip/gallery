@@ -83,7 +83,8 @@ class PaintingController extends Controller
     public function show($id)
     {
         $painting = Painting::where('id', $id)->firstOrFail();
-        return view('pages.painting')->with(['painting'=>$painting]);
+//        return view('pages.painting')->with(['painting'=>$painting]);
+        return response()->json(["painting"=>$painting]);
     }
 
     /**
