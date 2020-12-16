@@ -1,10 +1,12 @@
 <x-header/>
 
-<main class=" min-h-screen " >
+<main class="min-h-screen flex flex-row justify-center" >
 
     {{--    TODO organize paintings when we have some --}}
     @if(!Request::is('paintings/create'))
-        <div class="h-full flex flex-col ">
+
+        <div class="h-full flex flex-col w-full">
+
             <div class="h-full flex flex-row justify-evenly">
                 <div class="flex flex-col h-screen w-1/5 overflow-y-auto">
                     @foreach($paintings as $painting)
@@ -19,7 +21,7 @@
                        </div>
                     @endforeach
                 </div>
-                <iframe id="painting-view" class="h-screen w-1/2 flex flex-col items-center justify-center" src="/paintings/14"></iframe>
+{{--                <iframe id="painting-view" class="h-screen w-1/2 flex flex-col items-center justify-center" src="/paintings/14"></iframe>--}}
 
             </div>
             <a href="{{route('paintings.create')}}" class="w-48 whitespace-nowrap py-2 px-4 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">Add more paintings</a>

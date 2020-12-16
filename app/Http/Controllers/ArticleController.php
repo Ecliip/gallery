@@ -86,7 +86,7 @@ class ArticleController extends Controller
             'body'=>'required|min:150'
             ]);
 
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         $article->title = $request->title;
         $article->body = $request->body;
         $article->save();

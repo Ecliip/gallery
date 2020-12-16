@@ -94,7 +94,8 @@ class PaintingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $painting = Painting::findOrFail($id);
+        return view('pages.edit-painting')->with(['painting'=>$painting]);
     }
 
     /**
@@ -106,7 +107,18 @@ class PaintingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title'=>'min:3|required',
+            'description'=>'min:10|required',
+        ]);
+
+        $painting = Painting::findOrFail($id);
+        $painting->title = $request->title;
+        $painting->description = $request->description;
+        $painting->date = $request->date;
+        $painting->materials = $request->materials;
+        $painting->save();
+        return redirect('/');
     }
 
     /**

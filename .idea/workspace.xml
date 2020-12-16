@@ -20,8 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55652b94-1496-44c5-88cf-31c9d1a6b057" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/edit-painting.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/painting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/painting.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaintingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaintingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/gallery.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +198,8 @@
       <workItem from="1607876355777" duration="8620000" />
       <workItem from="1607940646875" duration="13000" />
       <workItem from="1607966270836" duration="10192000" />
-      <workItem from="1608052090190" duration="11965000" />
+      <workItem from="1608052090190" duration="13717000" />
+      <workItem from="1608139073999" duration="3394000" />
     </task>
     <servers />
   </component>
@@ -215,6 +219,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="518" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608141433600">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="518" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1608141433600" />
     <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607792467099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
