@@ -25,7 +25,7 @@ Route::get('/', [ArticleController::class, 'home'])->name('home');
 Route::get('/artist', function () {return view('pages.artist');})->name('artist');
 Route::get('/school', function () {return view('pages.school');})->name('school');
 Route::resource('articles', ArticleController::class);
-
+//Route::post('/articles/{article}', [ArticleController::class, 'store'])->middleware('auth')->name('articles.store');
 Route::post('/upload', [PaintingController::class, 'storeInPublic'])->name('upload');
 Route::resource('paintings', PaintingController::class);
 

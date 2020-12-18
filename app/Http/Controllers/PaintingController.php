@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
 class PaintingController extends Controller
 {
+
+    /**
+     * PaintingController constructor.
+     */
+    public function __construct() {
+        $this->middleware('auth')->except('index', 'show');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -132,7 +139,11 @@ class PaintingController extends Controller
     {
 //        TODO delete images from storage
         $painting = Painting::findOrFail($id);
-        $painting->delete();
+        Storage::delete($painting->path_lg);
+        Storage::delete($painting->path_md);
+        Storage::delete($painting->path_sm);
+//        $painting->delete();
+
         return redirect('/paintings');
     }
 
