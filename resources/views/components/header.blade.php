@@ -25,5 +25,18 @@
             <li><a href="{{route('paintings.index')}}">Gallery</a></li>
         </ul>
     </nav>
-    <a class="mx-5" href={{route('login')}}>Login</a>
+    @if(!Auth::check())
+        <a class="mx-5" href={{route('login')}}>Login</a>
+    @endif(Auth::check())
+    @if(Auth::check())
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+
+            <x-dropdown-link :href="route('logout')"
+                             onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                {{ __('Logout') }}
+            </x-dropdown-link>
+        </form>
+    @endif
 </header>
