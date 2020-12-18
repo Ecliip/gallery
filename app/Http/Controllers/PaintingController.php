@@ -130,6 +130,7 @@ class PaintingController extends Controller
      */
     public function destroy($id)
     {
+//        TODO delete images from storage
         $painting = Painting::findOrFail($id);
         $painting->delete();
         return redirect('/paintings');
