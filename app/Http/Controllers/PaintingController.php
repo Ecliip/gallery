@@ -139,10 +139,10 @@ class PaintingController extends Controller
     {
 //        TODO delete images from storage
         $painting = Painting::findOrFail($id);
-        Storage::delete($painting->path_lg);
-        Storage::delete($painting->path_md);
-        Storage::delete($painting->path_sm);
-//        $painting->delete();
+        Storage::disk('public')->delete($painting->path_lg);
+        Storage::disk('public')->delete($painting->path_md);
+        Storage::disk('public')->delete($painting->path_sm);
+        $painting->delete();
 
         return redirect('/paintings');
     }
