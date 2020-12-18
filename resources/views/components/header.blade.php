@@ -13,7 +13,7 @@
 
 </head>
 <body class="flex flex-col justify-between  min-h-screen">
-<header class="flex flex-row h-20 items-center px-5 justify-between">
+<header class="bg-indigo-900 flex flex-row h-20 items-center px-5 justify-between">
     <div class="mx-5">
         <a>Logo</a>
     </div>
