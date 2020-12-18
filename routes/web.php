@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\PaintingController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +13,12 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-//Route::get('/gallery', function () {return view('pages.gallery');})->name('gallery');
-Route::get('/', [ArticleController::class, 'home'])->name('home');
-Route::get('/artist', function () {return view('pages.artist');})->name('artist');
-Route::get('/school', function () {return view('pages.school');})->name('school');
-Route::resource('articles', ArticleController::class);
-Route::get('/login', function () {return view('pages.login');})->name('login');
-Route::post('/upload', [PaintingController::class, 'storeInPublic'])->name('upload');
-Route::resource('paintings', PaintingController::class);
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
