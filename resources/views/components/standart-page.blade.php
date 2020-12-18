@@ -2,7 +2,7 @@
 
     <main class="w-screen flex flex-row justify-center min-h-full">
 
-        <article class="w-2/4 min-h-full bg-indigo-100 h-full py-20 px-15 rounded-lg">
+        <article class="w-2/4 min-h-full bg-gray-200 h-full py-20 px-15 rounded-lg">
             @if($article)
                 <h2 class="text-center text-2xl uppercase mb-5">{{$article->title}}</h2>
                 <p>{{$article->body}}</p>
@@ -13,7 +13,7 @@
                         <form class="mx-5"  method="GET" action={{route('articles.create')}}>
                             @csrf
                                 <input type="hidden" name="section" value={{$section}}>
-                                <button class=" py-2 px-4 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75" type="submit">Add article</button>
+                                <button class=" py-2 px-4 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75" type="submit">Add article</button>
                         </form>
                     @endif
                 @else

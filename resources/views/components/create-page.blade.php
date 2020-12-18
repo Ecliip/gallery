@@ -2,9 +2,9 @@
 
 <main class="w-screen flex flex-row justify-center h-full" >
 
-    <form class="py-20 flex flex-col items-center w-3/4 bg-indigo-100 h-full" method="POST" action={{route('articles.store')}}>
+    <form class="py-20 flex flex-col items-center w-3/4 bg-gray-200 h-full" method="POST" action={{route('articles.store')}}>
+        <h2 class="mb-5 text-xl font-bold">Adding an article</h2>
         @csrf
-
         <h1>Write a new article</h1>
         <div class="flex flex-col w-1/2 mb-5">
             <label class="mb-3 ml-10" for="title">Title</label>
@@ -15,7 +15,7 @@
             <textarea class="w-full py-5 px-10 rounded-lg" rows=15 id="body" name="body" placeholder="Write your article..."></textarea>
         </div>
         <input type="hidden" name='section' value={{app('request')->input('section')}}>
-        <button class="my-5 py-2 px-4 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75" type="submit">Send</button>
+        <button class="my-5 py-2 px-4 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75" type="submit">Send</button>
     </form>
 
 

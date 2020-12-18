@@ -13,20 +13,20 @@
 
 </head>
 <body class="flex flex-col justify-between  min-h-screen">
-<header class="bg-indigo-900 flex flex-row h-20 items-center px-5 justify-between">
+<header class="bg-indigo-900 text-gray-400 flex flex-row h-20 items-center px-5 justify-between">
     <div class="mx-5">
         <a>Logo</a>
     </div>
     <nav class="flex-auto flex">
-        <ul class="flex flex-row flex-auto justify-center list-none">
-            <li class="mr-10"><a href="{{route('home')}}">Home</a></li>
-            <li class="mr-10"><a href="{{route('artist')}}">Artist</a></li>
-            <li class="mr-10"><a href="{{route('school')}}">School</a></li>
-            <li><a href="{{route('paintings.index')}}">Gallery</a></li>
+        <ul class="text-xl font-medium flex flex-row flex-auto justify-center list-none">
+            <li class="transition hover:text-gray-200 mr-10"><a href="{{route('home')}}">Home</a></li>
+            <li class="transition hover:text-gray-200 mr-10"><a href="{{route('artist')}}">Artist</a></li>
+            <li class="transition hover:text-gray-200 mr-10"><a href="{{route('school')}}">School</a></li>
+            <li><a class="transition hover:text-gray-200" href="{{route('paintings.index')}}">Gallery</a></li>
         </ul>
     </nav>
     @if(!Auth::check())
-        <a class="mx-5" href={{route('login')}}>Login</a>
+        <a class="transition hover:text-gray-200 mx-5" href={{route('login')}}>Login</a>
     @endif(Auth::check())
     @if(Auth::check())
         <form method="POST" action="{{ route('logout') }}">

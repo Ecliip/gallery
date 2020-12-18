@@ -11,7 +11,7 @@
                 <div class="flex flex-col h-screen w-1/5 overflow-y-auto">
                     @foreach($paintings as $painting)
 {{--                        TODO x-scroll. find out why appears--}}
-                       <div onclick="getData({{$painting->id}})" class="flex flex-col cursor-pointer px-3 py-4 mb-5 border-solid border-grey border-b-2 hover:bg-blue-200">
+                       <div onclick="getData({{$painting->id}})" class="flex flex-col cursor-pointer px-3 py-4 mb-5 border-solid border-grey border-b-2 transition hover:bg-gray-200">
                            <h3 class="text-center mb-2">{{$painting->title}}</h3>
                            <div class="w-24 self-center mb-4">
                                <img class="max-w-full" src="{{asset('storage/'.$painting->path_sm)}}">
@@ -26,7 +26,7 @@
 
             </div>
             @if(Auth::check())
-              <a href="{{route('paintings.create')}}" class="w-48 whitespace-nowrap py-2 px-4 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">Add more paintings</a>
+{{--              <a href="{{route('paintings.create')}}" class="w-48 whitespace-nowrap py-2 px-4 bg-indigo-500 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75">Add more paintings</a>--}}
             @endif
         </div>
     @endif
@@ -66,7 +66,7 @@
                 description.text(`Description: ${painting.description}`);
                 date.text(`Date: ${painting.date}`);
                 materials.text(`Materials: ${painting.materials}`);
-                buttons.attr('class', 'block');
+                buttons.attr('class', 'block flex flex-col justify-center items-center');
                 btnEdit.attr('href', `http://127.0.0.1:8000/paintings/${id}/edit`)
                 formDestroy.attr('action', `http://127.0.0.1:8000/paintings/${id}`)
             }});
