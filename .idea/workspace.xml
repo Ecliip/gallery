@@ -20,15 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55652b94-1496-44c5-88cf-31c9d1a6b057" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/indexOriginal.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/add-painting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/add-painting.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/create-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/create-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/dropdown-link.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/dropdown-link.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/standart-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/standart-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/gallery.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/painting.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/painting.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/View/Components/createPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/Components/CreatePage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/View/Components/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/Components/Footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/View/Components/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/Components/Header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/View/Components/standartPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/Components/StandartPage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +165,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DWES-2020" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -180,6 +182,7 @@
       <recent name="C:\xampp\htdocs\gallery\resources\views\pages" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\gallery\public" />
       <recent name="C:\xampp\htdocs\gallery" />
     </key>
   </component>
@@ -206,6 +209,11 @@
       <workItem from="1607966270836" duration="10192000" />
       <workItem from="1608052090190" duration="13717000" />
       <workItem from="1608139073999" duration="12594000" />
+      <workItem from="1608463995444" duration="4219000" />
+      <workItem from="1608496614329" duration="5316000" />
+      <workItem from="1608570187635" duration="2646000" />
+      <workItem from="1608581776316" duration="823000" />
+      <workItem from="1608587585527" duration="7033000" />
     </task>
     <servers />
   </component>
@@ -229,14 +237,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="518" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1608141433600" />
-    <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1607792467099">
+    <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1608570362424">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1607792467099" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1607590165018">
+    <state x="362" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1608570362424" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1608662590808">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607590165018" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608662590808" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1607464337032">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -261,9 +269,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1608063819210" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1608328537742">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1608573098755">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608328537742" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1608573098755" />
   </component>
 </project>

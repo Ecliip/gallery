@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class createPage extends Component
+class Header extends Component
 {
     /**
      * Create a new.jpg component instance.
@@ -23,6 +23,6 @@ class createPage extends Component
      */
     public function render()
     {
-        return view('components.create-page');
+        return view('components.header');
     }
 }

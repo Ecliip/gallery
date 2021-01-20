@@ -2,23 +2,18 @@
 
 namespace App\View\Components;
 
-use App\Models\Article;
 use Illuminate\View\Component;
 
-class standartPage extends Component
+class Footer extends Component
 {
     /**
      * Create a new.jpg component instance.
      *
      * @return void
      */
-
-    public $article;
-    public $section;
-    public function __construct($section)
+    public function __construct()
     {
-        $this->article = Article::firstWhere('section', $section);
-        $this->section = $section;
+        //
     }
 
     /**
@@ -28,6 +23,6 @@ class standartPage extends Component
      */
     public function render()
     {
-        return view('components.standart-page');
+        return view('components.footer');
     }
 }

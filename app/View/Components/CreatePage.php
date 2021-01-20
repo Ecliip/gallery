@@ -2,9 +2,10 @@
 
 namespace App\View\Components;
 
+use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class header extends Component
+class CreatePage extends Component
 {
     /**
      * Create a new.jpg component instance.
@@ -19,10 +20,10 @@ class header extends Component
     /**
      * Get the view / contents that represent the component.
      *
-     * @return \Illuminate\Contracts\View\View|string
+     * @return View|string
      */
     public function render()
     {
-        return view('components.header');
+        return view('components.create-page');
     }
 }
